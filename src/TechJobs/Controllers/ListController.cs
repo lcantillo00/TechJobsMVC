@@ -29,11 +29,13 @@ namespace TechJobs.Controllers
 
         public IActionResult Values(string column)
         {
+            if (column == null) column = "all";
             if (column.Equals("all"))
             {
                 List<Dictionary<string, string>> jobs = JobData.FindAll();
                 ViewBag.title =  "All Jobs";
-                ViewBag.jobs = jobs;
+                ViewBag.items = jobs;
+                ViewBag.column = "All";
                 return View("Jobs");
             }
             else

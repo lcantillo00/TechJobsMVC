@@ -1,0 +1,10 @@
+﻿<h1>@ViewBag.title</h1>
+<ul>
+    @foreach (Dictionary <string, string> job in ViewBag.results) {
+
+        <li>
+		    @job["employer"]
+               
+        </li>
+    }
+</ul>
